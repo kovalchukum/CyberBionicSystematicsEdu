@@ -1,0 +1,4 @@
+#ignore some build files
+**/.vs
+**/bin
+**/obj
