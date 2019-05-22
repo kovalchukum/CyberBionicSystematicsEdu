@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversalConverterApp", "UniversalConverterApp.csproj", "{212EBA40-0915-4F2A-A3AD-BF1516CA6253}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversalConverterLib", "..\UniversalConverterLib\UniversalConverterLib.csproj", "{97C60048-D142-4D84-9A71-1981B5F8448A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{212EBA40-0915-4F2A-A3AD-BF1516CA6253}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{212EBA40-0915-4F2A-A3AD-BF1516CA6253}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{212EBA40-0915-4F2A-A3AD-BF1516CA6253}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{212EBA40-0915-4F2A-A3AD-BF1516CA6253}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97C60048-D142-4D84-9A71-1981B5F8448A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97C60048-D142-4D84-9A71-1981B5F8448A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97C60048-D142-4D84-9A71-1981B5F8448A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97C60048-D142-4D84-9A71-1981B5F8448A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50B5456A-35E0-46B5-AA79-D8E629021145}
+	EndGlobalSection
+EndGlobal
