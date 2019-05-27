@@ -8,10 +8,11 @@ namespace MemoryMonitorApp
 {
     public class DataGenerator
     {
-        private readonly long[] _internalDataArr;
         public DataGenerator()
         {
-            _internalDataArr = new long[1000];
+            var someData = new object[1000];
         }
+
+        public string guid = Guid.NewGuid().ToString();
     }
 }
