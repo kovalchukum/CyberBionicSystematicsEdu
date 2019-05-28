@@ -24,5 +24,17 @@ namespace UniversalConverterApp
         {
             InitializeComponent();
         }
+
+        private void ComboBoxConverter_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            ComboBoxConverter.Items.Add("SomeItem 1");
+            ComboBoxConverter.Items.Add("SomeItem 2");
+            ComboBoxConverter.Items.Add("SomeItem 3");
+        }
+
+        private void ComboBoxConverter_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            InputValueTextBox.Text = "selected item " + ComboBoxConverter.SelectedIndex;
+        }
     }
 }

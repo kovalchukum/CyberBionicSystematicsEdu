@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UniversalConverterApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="UniversalConverter" Height="450" Width="800">
     <Grid>
-        
+        <Button Content="Button" HorizontalAlignment="Left" Margin="204,249,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="43" FontSize="15">
+            <Run Text="Универсальный конвертер всего во всё. "/><LineBreak/>
+            <Run Text="Просто выберите в выпадающем списке необходимый конвертер."/>
+        </TextBlock>
+        <ComboBox Name="ComboBoxConverter" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Width="158" Height="29" FontSize="15" Loaded="ComboBoxConverter_OnLoaded"
+                  SelectionChanged="ComboBoxConverter_OnSelectionChanged"/>
+        <TextBox Name="InputValueTextBox" HorizontalAlignment="Left" Height="29" Margin="204,102,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="268" FontSize="15"/>
+
     </Grid>
 </Window>
