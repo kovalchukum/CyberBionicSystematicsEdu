@@ -13,8 +13,6 @@ using System.Threading;
 //    - Result - должен выдавать результат операции или исключение если оно произошло внутри переданной операции
 //    или если операция еще не запускалась
 //
-//
-//
 //    - Добавить возможность создания экземпляров с помощью записи: 
 //    "var thread = ThreadWithResult.Create(()=>10)" (пример),
 //    с автоматическим определением типа возвращаемого значения, с помощью переданного делегата.
@@ -25,18 +23,35 @@ namespace ThreadResult
     {
         private readonly Func<TReturn> _function;
 
-        public TReturn Result;
-        public bool Success { get; }
-        public bool IsCompleated { get; } = false;
+        public TReturn Result { get; set; }
+
+        public bool Success { get; set; } = false;
+
+        public bool IsCompleated { get; set; } = false;
 
         private void InternalFunc()
         {
             void GetResult() => Result = _function();
-            GetResult();
+
+            try
+            {
+                GetResult();
+            }
+            catch (Exception e)
+            {
+                IsCompleated = true;
+                throw;
+            }
+            finally
+            {
+                Success = true;
+                IsCompleated = true;
+            }
         }
 
         public void Start()
         {
+            IsCompleated = false;
             var customThread = new Thread(InternalFunc);
             customThread.Start();
         }
@@ -49,21 +64,24 @@ namespace ThreadResult
 
     class Program
     {
-        public static string someFunc()
+        public static string SomeFunc()
         {
-            Thread.Sleep(800);
+          //  throw new Exception("SomeFunc exception");
+           // Thread.Sleep(800);
             return "sadsadas";
         }
 
         static void Main(string[] args)
         {
-            var resultThead = new ThreadWithResult<string>(someFunc);
+            var resultThead = new ThreadWithResult<string>(SomeFunc);
+           // Console.WriteLine(resultThead.Result);
+
             resultThead.Start();
 
             Thread.Sleep(500);
-            Console.WriteLine(resultThead.Result);
+            Console.WriteLine("Result: " + resultThead.Result);
 
-
+            Console.WriteLine("End of work");
             Console.ReadKey();
         }
     }
