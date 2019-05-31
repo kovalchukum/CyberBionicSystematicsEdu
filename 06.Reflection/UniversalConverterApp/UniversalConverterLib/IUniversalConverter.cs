@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UniversalConverterLib
 {
     public interface IUniversalConverter
     {
-        
-
+        object Convert(object value);
+        Type GetInValueType(object inValue);
+        Type GetOutValueType(object outValue);
     }
 }
