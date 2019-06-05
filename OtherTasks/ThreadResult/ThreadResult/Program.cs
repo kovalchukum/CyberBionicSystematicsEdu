@@ -19,11 +19,28 @@ using System.Threading;
 
 namespace ThreadResult
 {
+
     public class ThreadWithResult<TReturn>
     {
         private readonly Func<TReturn> _function;
 
-        public TReturn Result { get; set; }
+        private Exception _resultException;
+
+        public TReturn Result
+        {
+            get
+            {
+                if (Success)
+                {
+                    return Result;
+                }
+                else
+                {
+                    return _resultException;
+                }
+            }
+            set { Result = value; }
+        }
 
         public bool Success { get; set; } = false;
 
